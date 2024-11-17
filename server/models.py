@@ -16,3 +16,9 @@ class Pet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     species = db.Column(db.String)
+class User(db.model):
+    __tablename__ = 'users'
+    id = db.column(db.Integer, primary_key=True)
+    username = db.column(db.string(80), unique=True, Nullable=False, index=True)
+    email = db.column(db.string(120), unique=True)
+    verified = db.column(db.Boolean, default=False)
